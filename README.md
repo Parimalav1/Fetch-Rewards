@@ -8,7 +8,7 @@ Rest of this document contains information about what technologies were used to 
  
  Backend APIs are deployed at: http://localhost:3300/
 
-## Routes:
+## Routes & APIs:
 
 ### Add transactions
 Adding transactions(adding reward points) can be done using the REST API shown below. 

@@ -1,26 +1,34 @@
 # Fetch-Rewards
+
 #### 2 tables - payers, transactions(intermediary)
 #### payers table: id, name
 #### transactions table: id, payerId, points(+,-), timestamp, debtFrom(integer)
 
 About the Coding Exercise:
- I'm using Node.js with Express
- Hosted/Deployed on Heroku
+
+### Tech Stack: Node.js, Express, Postman, SQLite3
+ 
  URL: http://localhost:3300/
 
-Routes:
+## Routes:
 
 ● Add transactions for a specific payer and date.
 
-  http://localhost:3300/api/addTransactions
+  HTTP Method: [POST] 
+  
+  URL: /api/addTransactions
 
 ● Spend points using the rules above and return a list of { "payer": <string>, "points": <integer> } for each call.
-  
-  http://localhost:3300/api/spendPoints
+ 
+   HTTP Method: [POST]
+   
+   URL: /api/spendPoints
   
 ● Return all payer point balance
 
-  http://localhost:3300/api/pointBalance
+   HTTP Method: [GET]
+   
+   URL: /api/pointBalance
   
 Example
 Suppose you call your add transaction route with the following sequence of calls:

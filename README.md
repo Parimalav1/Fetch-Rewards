@@ -1,6 +1,6 @@
 # Fetch-Rewards
 
-This project is a coding exercise to implement backend APIs for Fetch-Rewards. Rewards points are given to a customer by providers such as Proctor & Gamble, Dannon, and Unilever. When a customer interacts with a brand, such as making a purchase or viewing a marketing video, the provider may choose to reward the customer with points. These points are stored in our backend. The customer can later on spend these rewards points during checkout process. At any time, customer can view their balance points. This backend is designed to provide APIs necessary to implement this reward point system.
+This project is a coding exercise to implement backend APIs for Fetch-Rewards. Rewards points are given to a customer by providers such as Proctor & Gamble, Dannon, and Unilever. When a customer interacts with a brand, such as making a purchase or viewing a marketing video, the provider may choose to reward the customer with points. These points are stored in our backend. The customer can spend these rewards points during checkout process in future purchases. At any time, customer can view his or her balance points. This backend is designed to provide APIs necessary to implement this reward point system.
 
 Rest of this document contains information about what technologies were used to develop the backend and how to use the backend REST API. Pay close attention to the examples for each API.
 
@@ -11,7 +11,7 @@ Rest of this document contains information about what technologies were used to 
 ## Routes:
 
 ### Add transactions
-Transactions(adding points) can be done using the REST API shown below. 
+Adding transactions(adding reward points) can be done using the REST API shown below. 
 
      HTTP Method: [POST] 
   

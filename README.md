@@ -1,6 +1,8 @@
 # Fetch-Rewards
 
-This project is a coding exercise to implement backend APIs for Fetch-Rewards. Rest of this document contains information about what technologies were used to develop the backend and how to use the backend REST API. Pay close attention to the examples for each API.
+This project is a coding exercise to implement backend APIs for Fetch-Rewards. Rewards points are given to a customer by providers such as Proctor & Gamble, Dannon, and Unilever. When a customer interacts with a brand, such as making a purchase or viewing a marketing video, the provider may choose to reward the customer with points. These points are stored in our backend. The customer can later on spend these rewards points during checkout process. At any time, customer can view their balance points. This backend is designed to provide APIs necessary to implement this reward point system.
+
+Rest of this document contains information about what technologies were used to develop the backend and how to use the backend REST API. Pay close attention to the examples for each API.
 
 #### Tech Stack: Node.js, Express, Postman, SQLite3
  
@@ -57,7 +59,8 @@ c) Failed  debit due to 0 balance
       }
     
    #### Example b: Successful partial debit
-       In this example, user had a balance of 100 points. A request to spend 500 points would result in a partial debit of 100 points. The response says that user was able to spend 100 points from "P&G" and unable to spend remaining 400 points due to inadequate balance.
+   In this example, user had a balance of 100 points. A request to spend 500 points would result in a partial debit of 100 points. 
+   The response says that user was able to spend 100 points from "P&G" and unable to spend remaining 400 points due to inadequate balance.
     
     HTTP Method: [POST]
    

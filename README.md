@@ -1,9 +1,5 @@
 # Fetch-Rewards
 
-#### 2 tables - payers, transactions(intermediary)
-#### payers table: id, name
-#### transactions table: id, payerId, points(+,-), timestamp, debtFrom(integer)
-
 About the Coding Exercise:
 
 #### Tech Stack: Node.js, Express, Postman, SQLite3
@@ -14,31 +10,36 @@ About the Coding Exercise:
 
 ● Add transactions for a specific payer and date.
 
-  HTTP Method: [POST] 
+     HTTP Method: [POST] 
   
-  URL: /api/addTransactions
+     URL: /api/addTransactions
+   
+     Request:
+   
+       { 
+        "payer": "P&G", 
+        "points": 600,
+        "timestamp": "2021-02-02T07:15:05.129Z"
+       }
 
 ● Spend points using the rules above and return a list of { "payer": <string>, "points": <integer> } for each call.
  
    HTTP Method: [POST]
    
    URL: /api/spendPoints
+   
+    Request:
   
+    Response:
+    
+    
 ● Return all payer point balance
 
    HTTP Method: [GET]
    
    URL: /api/pointBalance
   
-Example
-Suppose you call your add transaction route with the following sequence of calls:
+ #### 2 tables - payers, transactions(intermediary)
+ #### payers table: id, name
+ #### transactions table: id, payerId, points(+,-), timestamp, debtFrom(integer)
 
-● { "payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z" }
-
-● { "payer": "UNILEVER", "points": 200, "timestamp": "2020-10-31T11:00:00Z" }
-
-● { "payer": "DANNON", "points": -200, "timestamp": "2020-10-31T15:00:00Z" }
-
-● { "payer": "MILLER COORS", "points": 10000, "timestamp": "2020-11-01T14:00:00Z" }
-
-● { "payer": "DANNON", "points": 300, "timestamp": "2020-10-31T10:00:00Z" }

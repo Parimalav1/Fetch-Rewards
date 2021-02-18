@@ -112,8 +112,30 @@ Get balance points using REST API shown below.
        "P&G": 600
      }
   
-  
- #### 2 tables - payers, transactions(intermediary)
- #### payers table: id, name
- #### transactions table: id, payerId, points(+,-), timestamp, debtFrom(integer)
+ 
+ ## Database Details
+ SQLite3 databased is being used. Schema is shown below:
 
+#### Table: Payers
+|  id  | name |
+|:----:|:----:|
+
+Everytime the backend sees a new provider in a add transaction, an entry/row is created in Payers table. 
+
+#### Table: Transactions
+|  id  | payerId(foreign key) | points | timestamp | debtFrom |
+|:----:|:--------------------:|:------:|:---------:|:--------:|
+
+Adding points results in adding an entry/row to the transaction table. Spending points may result in addition of one or more entries/rows to the transaction table.
+When spending points, a negative sign is used to denote subtraction of points. Also, debtFrom field is used to keep track of the source of the points. debtFrom references the id of the row/entry in transaction table from where the points were used for spending.
+
+## How to deploy the backend locally
+1. If you do not have node/npm on your computer, install nodejs+npm combo from here: https://nodejs.org/en/download/
+2. Open a terminal
+3. Clone this backend repository. ```git clone https://github.com/Parimalav1/Fetch-Rewards```
+4. ```cd Fetch-Rewards```
+5. ```npm install```
+6. ```npm start```
+7. Voila! Backend is now up and running on your localhost.
+8. Point your postman at http://localhost:3300 and start using/testing the backend API
+9. Note that the port number(3300) may change on your computer. If it does, the correct URL for backend API will show up on your terminal

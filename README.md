@@ -6,7 +6,7 @@
 
 About the Coding Exercise:
 
-### Tech Stack: Node.js, Express, Postman, SQLite3
+#### Tech Stack: Node.js, Express, Postman, SQLite3
  
  URL: http://localhost:3300/
 

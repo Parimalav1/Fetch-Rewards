@@ -24,20 +24,34 @@ About the Coding Exercise:
 
 ● Spend points using the rules above and return a list of { "payer": <string>, "points": <integer> } for each call.
  
-   HTTP Method: [POST]
+    HTTP Method: [POST]
    
-   URL: /api/spendPoints
+    URL: /api/spendPoints
    
     Request:
+      {
+        "points": 500
+      }
   
     Response:
+    
+      {
+    "P&G": 100,
+    "error": "Inadequate balance for 400 points"
+      }
     
     
 ● Return all payer point balance
 
-   HTTP Method: [GET]
+    HTTP Method: [GET]
    
-   URL: /api/pointBalance
+    URL: /api/pointBalance
+    
+     {
+       "DANNON": 1600,
+       "UNILEVER": 700,
+       "P&G": 600
+     }
   
  #### 2 tables - payers, transactions(intermediary)
  #### payers table: id, name

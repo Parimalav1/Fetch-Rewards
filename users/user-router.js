@@ -1,0 +1,118 @@
+const router = require("express").Router();
+
+const Users = require("./user-model.js");
+
+router.get("/", (req, res) => {
+    Users.find()
+        .then(users => {
+            if (users) {
+                res.status(200).json(users);
+            } else {
+                res.status(400).json({
+                    msg: 'bad requests for users'
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).json({
+                err: 'Failed to get users'
+            });
+        });
+});
+
+router.get('/:id', (req, res) => {
+    Users.findById(req.params.id)
+        .then(user => {
+            if (user) {
+                res.status(200).json(user);
+            } else {
+                res.status(404).json({
+                    msg: 'Could not find user with given id.'
+                })
+            }
+        })
+        .catch(err => {
+            res.status(500).json({
+                err: 'Failed to get user'
+            });
+        });
+});
+
+router.post('/', (req, res) => {
+    Users.add(req.body)
+        .then(newUser => {
+            res.status(201).json(newUser);
+        })
+        .catch(err => {
+            res.status(500).json({
+                message: 'Failed to create new user'
+            });
+        });
+});
+
+router.post('/:id/foodItems', (req, res) => {
+    Users.findById(req.params.id)
+        .then(user => {
+            console.log('Add food, body:', req.body);
+            if (user) {
+                Users.addFood(req.body, req.params.id)
+                    .then(food => {
+                        // console.log(food);
+                        res.status(201).json(food);
+                    })
+                    .catch(err => {
+                        console.error('Failed to post foodItem, error:', err)
+                        res.status(500).json({
+                            err: 'Failed to add foodItems. ' + err
+                        });
+                    });
+            } else {
+                res.status(400).json({
+                    msg: 'Please provide user information'
+                })
+            }
+        })
+        .catch(err => {
+            console.error('Failed to post foodItem, error:', err)
+            res.status(500).json({
+                err: 'Failed to add foodItems. ' + err
+            });
+        });
+});
+
+router.put('/:id', (req, res) => {
+    // console.log(req.params.id, req.body);
+    Users.update(req.params.id, req.body)
+        .then((updatedUser) => {
+            // console.log(updatedUser)
+            if (updatedUser) {
+                res.status(200).json(updatedUser);
+            } else {
+                res.status(400).json({
+                    msg: 'Please provide username & password for user with given id.'
+                })
+            }
+        })
+        .catch(err => {
+            res.status(500).json({
+                err: 'Failed to edit user'
+            });
+        });
+});
+
+router.delete('/:id', (req, res) => {
+    // console.log('delete request', req.params.id);
+    Users.remove(req.params.id, req.headers.authorization)
+        .then(() => {
+            res.status(201).json({
+                msg: 'user is deleted'
+            });
+        })
+        .catch(err => {
+            res.status(500).json({
+                message: 'Failed to delete user'
+            });
+        });
+});
+
+module.exports = router;

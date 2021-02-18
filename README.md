@@ -6,7 +6,7 @@ Rest of this document contains information about what technologies were used to 
 
 #### Tech Stack: Node.js, Express, Postman, SQLite3
  
- URL: http://localhost:3300/
+ Backend APIs are deployed at: http://localhost:3300/
 
 ## Routes:
 

@@ -1,6 +1,6 @@
 # Fetch-Rewards
 
-This project a Coding Exercise to implement backend APIs for Fetch-Rewards. Rest of this document contains information about what technologies were used to develop the backend and how to use the backend REST API. Pay close attention to the examples for each API.
+This project is a coding exercise to implement backend APIs for Fetch-Rewards. Rest of this document contains information about what technologies were used to develop the backend and how to use the backend REST API. Pay close attention to the examples for each API.
 
 #### Tech Stack: Node.js, Express, Postman, SQLite3
  
@@ -38,12 +38,12 @@ b) Successful partial debit
 
 c) Failed  debit due to 0 balance
  
+    
+   #### Example a: Successful full debit
+    
     HTTP Method: [POST]
    
     URL: /api/spendPoints
-   
-    
-   #### Example a: Successful full debit
     
     Request:
       {
@@ -57,7 +57,12 @@ c) Failed  debit due to 0 balance
       }
     
    #### Example b: Successful partial debit
-    In this example, user had a balance of 100 points. A request to spend 500 points would result in a partial debit of 100 points. The response says that user was able to spend 100 points from "P&G" and unable to spend remaining 400 points due to inadequate balance.
+       In this example, user had a balance of 100 points. A request to spend 500 points would result in a partial debit of 100 points. The response says that user was able to spend 100 points from "P&G" and unable to spend remaining 400 points due to inadequate balance.
+    
+    HTTP Method: [POST]
+   
+    URL: /api/spendPoints
+    
     Request:
     
       {
@@ -72,6 +77,10 @@ c) Failed  debit due to 0 balance
       }
     
    #### Example c: Failed debit due to 0 balance
+    
+    HTTP Method: [POST]
+   
+    URL: /api/spendPoints
     
     Request:
     

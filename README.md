@@ -21,6 +21,12 @@ About the Coding Exercise:
          "points": 600,
          "timestamp": "2021-02-02T07:15:05.129Z"
        }
+       
+     Response:
+     
+      {
+        "id": 14
+      }
 
 ● Spend points using the rules above and return a list of { "payer": <string>, "points": <integer> } for each call.
  
@@ -47,6 +53,8 @@ About the Coding Exercise:
     HTTP Method: [GET]
    
     URL: /api/pointBalance
+    
+    Response:
     
      {
        "DANNON": 1600,

@@ -6,14 +6,18 @@ const Balance = require("./balance-model.js");
 router.get('/', (req, res) => {
     Balance.getBalances()
         .then(transactions => {
+            // console.log('transactions: ', transactions)
             d = {}
-            for (t in transactions) {
+            for (let i in transactions) {
+                let t = transactions[i];
+                console.log("t: ", t)
                 if (t.name in d) {
                     d[t.name] += t.points
                 } else {
                     d[t.name] = t.points
                 }
             }
+            // console.log('d: ', d)
             res.status(200).json(d)
         })
         .catch(err => {

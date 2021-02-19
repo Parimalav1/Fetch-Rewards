@@ -2,7 +2,6 @@
 exports.up = function(knex) {
   return knex.schema
   .createTable("payers", tbl => {
-
     tbl.increments();
     tbl.string("name", 128).notNullable().unique();
   })
@@ -15,7 +14,7 @@ exports.up = function(knex) {
         .onDelete("RESTRICT")
         .onUpdate("CASCADE");
     tbl.integer("points");
-    tbl.datetime("dateTime");
+    tbl.datetime("timestamp");
     tbl.integer("debtFrom")
         .unsigned();
   })

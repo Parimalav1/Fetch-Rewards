@@ -4,15 +4,15 @@ exports.seed = function(knex) {
   return knex('payers').insert([
     {
     id: 1, 
-    payer: 'DANNON', 
+    name: 'DANNON', 
     },
     {
     id: 2, 
-    payer: 'UNILEVER',
+    name: 'UNILEVER',
     },
     {
     id: 3, 
-    payer: 'MILLER COORS',
+    name: 'MILLER COORS',
     }
   ]);
 };

@@ -15,10 +15,9 @@ server.use(cors());
 server.options('*', cors());
 server.use(express.json());
 
-server.use('/api/users', usersRouter);
 server.use('/api/addTransactions', addRouter);
 server.use('/api/spendPoints', spendRouter);
-server.use('api/pointBalance', balanceRouter);
+server.use('/api/pointBalance', balanceRouter);
 
 server.get("/", (req, res) => {
     res.json({ api: "up" });

@@ -1,14 +1,4 @@
 # Fetch-Rewards
-<<<<<<< HEAD
-=======
-# 2 tables - payers, transactions(intermediary)
-# payers table: id, name
-# transactions table: id, payerId, points(+,-), timestamp, debtFrom(id)
-# debtFrom(id) is included to track the oldest transaction
-
-# 3 routers
-# addTransaction-router, spend-router, balance-router
->>>>>>> Edited Readme
 
 This project is a coding exercise to implement backend APIs for Fetch-Rewards. Reward points are given to a customer by providers such as Proctor & Gamble, Dannon, and Unilever. When a customer interacts with a brand, such as making a purchase or viewing a marketing video, the provider may choose to reward the customer with points. These points are stored in our backend. The customer can spend these rewards points during checkout process in future purchases. At any time, customer can view his or her balance points. This backend is designed to provide APIs necessary to implement this reward point system.
 
@@ -149,3 +139,11 @@ When spending points, a negative sign is used to denote subtraction of points. A
 7. Voila! Backend is now up and running on your localhost.
 8. Point your postman at http://localhost:3300 and start using/testing the backend API
 9. Note that the port number(3300) may change on your computer. If it does, the correct URL for backend API will show up on your terminal
+
+### 2 tables - payers, transactions(intermediary)
+### payers table: id, name
+### transactions table: id, payerId, points(+,-), timestamp, debtFrom(id)
+### debtFrom(id) is included to track the oldest transaction
+
+### 3 routers
+### addTransaction-router, spend-router, balance-router

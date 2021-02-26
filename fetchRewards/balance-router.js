@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
             d = {}
             for (let i in transactions) {
                 let t = transactions[i];
-                console.log("t: ", t)
+                // console.log("t: ", t)
                 if (t.name in d) {
                     d[t.name] += t.points
                 } else {

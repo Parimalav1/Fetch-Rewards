@@ -61,9 +61,9 @@ function spendPoints(points) {
           payerIdFromI = sortedList[i].payerId
           points -= pointsFromI
           if (payerNameFromI in rv) {
-            rv[payerNameFromI] += pointsFromI
+            rv[payerNameFromI] += -pointsFromI
           } else {
-            rv[payerNameFromI] = pointsFromI
+            rv[payerNameFromI] = -pointsFromI
           }
           recordASpend(payerIdFromI, pointsFromI, sortedList[i].id)
           // console.log('points: ', points)
